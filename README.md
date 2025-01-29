@@ -25,13 +25,16 @@ This project focuses on analyzing and recommending effective COVID-19 policies t
 
 ---
 
-### **  Architecture Diagram**
-![Architecture Diagram](architecture.drawio copy.png)
+###   Architecture Diagram**
+![architecture drawio](https://github.com/user-attachments/assets/b7402a16-3833-4d0d-a63a-6eebd45c5de4)
+
 
 ---
 
-### ** Schema Diagram**
-![Schema Diagram](team17covid19schema.drawio copy.png)
+###  Schema Diagram**
+![team17covid19schema drawio](https://github.com/user-attachments/assets/45de8eae-ddcb-46ea-b97c-0295cd57b6f0)
+
+
 
 ---
 

@@ -25,20 +25,20 @@ This project focuses on analyzing and recommending effective COVID-19 policies t
 
 ---
 
-###   Architecture Diagram**
+###   Architecture Diagram
 ![architecture drawio](https://github.com/user-attachments/assets/b7402a16-3833-4d0d-a63a-6eebd45c5de4)
 
 
 ---
 
-###  Schema Diagram**
+###  Schema Diagram
 ![team17covid19schema drawio](https://github.com/user-attachments/assets/45de8eae-ddcb-46ea-b97c-0295cd57b6f0)
 
 
 
 ---
 
-## 🛠 Key Components and Files
+##  Key Components and Files
 
 ### **1. ARM Templates**
 - **[Factory Template](ds310Team7Covid19_ARMTemplateForFactory.json)**: Deploys the Azure Data Factory.

@@ -1,0 +1,250 @@
+{
+    "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "factoryName": {
+            "type": "string",
+            "metadata": "Data Factory name",
+            "defaultValue": "ds310Team7Covid19"
+        },
+        "SqlServer1_connectionString": {
+            "type": "secureString",
+            "metadata": "Secure string for 'connectionString' of 'SqlServer1'"
+        },
+        "AzureBlobStorage1_connectionString": {
+            "type": "secureString",
+            "metadata": "Secure string for 'connectionString' of 'AzureBlobStorage1'"
+        },
+        "AzureDataLakeStorage1_accountKey": {
+            "type": "secureString",
+            "metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage1'"
+        },
+        "AzureSqlDatabase1_connectionString": {
+            "type": "secureString",
+            "metadata": "Secure string for 'connectionString' of 'AzureSqlDatabase1'"
+        },
+        "AzureSqlDatabase2_connectionString": {
+            "type": "secureString",
+            "metadata": "Secure string for 'connectionString' of 'AzureSqlDatabase2'"
+        },
+        "AzureDataLakeStorage2_accountKey": {
+            "type": "secureString",
+            "metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage2'"
+        },
+        "AzureSqlDatabase3_connectionString": {
+            "type": "secureString",
+            "metadata": "Secure string for 'connectionString' of 'AzureSqlDatabase3'"
+        },
+        "AzureDataLakeStorage3_accountKey": {
+            "type": "secureString",
+            "metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage3'"
+        },
+        "CosmosDbNoSql1_connectionString": {
+            "type": "secureString",
+            "metadata": "Secure string for 'connectionString' of 'CosmosDbNoSql1'"
+        },
+        "AzureDataLakeStorage4_accountKey": {
+            "type": "secureString",
+            "metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage4'"
+        },
+        "AzureDataLakeStorage5_accountKey": {
+            "type": "secureString",
+            "metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage5'"
+        },
+        "SqlServer2_connectionString": {
+            "type": "secureString",
+            "metadata": "Secure string for 'connectionString' of 'SqlServer2'"
+        },
+        "SqlServer3_connectionString": {
+            "type": "secureString",
+            "metadata": "Secure string for 'connectionString' of 'SqlServer3'"
+        },
+        "covidmetricsdataflow_datalake_accountKey": {
+            "type": "secureString",
+            "metadata": "Secure string for 'accountKey' of 'covidmetricsdataflow_datalake'"
+        },
+        "AzureDataLakeStorage6_accountKey": {
+            "type": "secureString",
+            "metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage6'"
+        },
+        "challenge2_accountKey": {
+            "type": "secureString",
+            "metadata": "Secure string for 'accountKey' of 'challenge2'"
+        },
+        "AzureDataLakeStorage1_properties_typeProperties_url": {
+            "type": "string",
+            "defaultValue": "https://covid19w6qt2tkcnqvyg.dfs.core.windows.net/"
+        },
+        "AzureDataLakeStorage2_properties_typeProperties_url": {
+            "type": "string",
+            "defaultValue": "https://covid19w6qt2tkcnqvyg.dfs.core.windows.net/"
+        },
+        "AzureDataLakeStorage3_properties_typeProperties_url": {
+            "type": "string",
+            "defaultValue": "https://covid19w6qt2tkcnqvyg.dfs.core.windows.net/"
+        },
+        "AzureDataLakeStorage4_properties_typeProperties_url": {
+            "type": "string",
+            "defaultValue": "https://covid19w6qt2tkcnqvyg.dfs.core.windows.net/"
+        },
+        "AzureDataLakeStorage5_properties_typeProperties_url": {
+            "type": "string",
+            "defaultValue": "https://covid19w6qt2tkcnqvyg.dfs.core.windows.net/"
+        },
+        "covidmetricsdataflow_datalake_properties_typeProperties_url": {
+            "type": "string",
+            "defaultValue": "https://covid19w6qt2tkcnqvyg.dfs.core.windows.net/"
+        },
+        "AzureDataLakeStorage6_properties_typeProperties_url": {
+            "type": "string",
+            "defaultValue": "https://covid19w6qt2tkcnqvyg.dfs.core.windows.net/"
+        },
+        "challenge2_properties_typeProperties_url": {
+            "type": "string",
+            "defaultValue": "https://covid19w6qt2tkcnqvyg.dfs.core.windows.net/"
+        },
+        "containerUri": {
+            "type": "string",
+            "metadata": "URI to storage account containing linked ARM templates"
+        },
+        "containerSasToken": {
+            "type": "string",
+            "metadata": "Sas token to storage account containing linked ARM templates"
+        }
+    },
+    "variables": {
+        "factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+    },
+    "resources": [
+        {
+            "name": "ds310Team7Covid19_ArmTemplate_0",
+            "type": "Microsoft.Resources/deployments",
+            "apiVersion": "2018-02-01",
+            "properties": {
+                "mode": "incremental",
+                "templateLink": {
+                    "uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+                    "contentVersion": "1.0.0.0"
+                },
+                "parameters": {
+                    "factoryName": {
+                        "value": "[parameters('factoryName')]"
+                    },
+                    "AzureBlobStorage1_connectionString": {
+                        "value": "[parameters('AzureBlobStorage1_connectionString')]"
+                    },
+                    "AzureDataLakeStorage1_accountKey": {
+                        "value": "[parameters('AzureDataLakeStorage1_accountKey')]"
+                    },
+                    "AzureSqlDatabase1_connectionString": {
+                        "value": "[parameters('AzureSqlDatabase1_connectionString')]"
+                    },
+                    "AzureSqlDatabase2_connectionString": {
+                        "value": "[parameters('AzureSqlDatabase2_connectionString')]"
+                    },
+                    "AzureDataLakeStorage2_accountKey": {
+                        "value": "[parameters('AzureDataLakeStorage2_accountKey')]"
+                    },
+                    "AzureSqlDatabase3_connectionString": {
+                        "value": "[parameters('AzureSqlDatabase3_connectionString')]"
+                    },
+                    "AzureDataLakeStorage3_accountKey": {
+                        "value": "[parameters('AzureDataLakeStorage3_accountKey')]"
+                    },
+                    "CosmosDbNoSql1_connectionString": {
+                        "value": "[parameters('CosmosDbNoSql1_connectionString')]"
+                    },
+                    "AzureDataLakeStorage4_accountKey": {
+                        "value": "[parameters('AzureDataLakeStorage4_accountKey')]"
+                    },
+                    "AzureDataLakeStorage5_accountKey": {
+                        "value": "[parameters('AzureDataLakeStorage5_accountKey')]"
+                    },
+                    "covidmetricsdataflow_datalake_accountKey": {
+                        "value": "[parameters('covidmetricsdataflow_datalake_accountKey')]"
+                    },
+                    "AzureDataLakeStorage6_accountKey": {
+                        "value": "[parameters('AzureDataLakeStorage6_accountKey')]"
+                    },
+                    "challenge2_accountKey": {
+                        "value": "[parameters('challenge2_accountKey')]"
+                    },
+                    "AzureDataLakeStorage1_properties_typeProperties_url": {
+                        "value": "[parameters('AzureDataLakeStorage1_properties_typeProperties_url')]"
+                    },
+                    "AzureDataLakeStorage2_properties_typeProperties_url": {
+                        "value": "[parameters('AzureDataLakeStorage2_properties_typeProperties_url')]"
+                    },
+                    "AzureDataLakeStorage3_properties_typeProperties_url": {
+                        "value": "[parameters('AzureDataLakeStorage3_properties_typeProperties_url')]"
+                    },
+                    "AzureDataLakeStorage4_properties_typeProperties_url": {
+                        "value": "[parameters('AzureDataLakeStorage4_properties_typeProperties_url')]"
+                    },
+                    "AzureDataLakeStorage5_properties_typeProperties_url": {
+                        "value": "[parameters('AzureDataLakeStorage5_properties_typeProperties_url')]"
+                    },
+                    "covidmetricsdataflow_datalake_properties_typeProperties_url": {
+                        "value": "[parameters('covidmetricsdataflow_datalake_properties_typeProperties_url')]"
+                    },
+                    "AzureDataLakeStorage6_properties_typeProperties_url": {
+                        "value": "[parameters('AzureDataLakeStorage6_properties_typeProperties_url')]"
+                    },
+                    "challenge2_properties_typeProperties_url": {
+                        "value": "[parameters('challenge2_properties_typeProperties_url')]"
+                    }
+                }
+            },
+            "dependsOn": []
+        },
+        {
+            "name": "ds310Team7Covid19_ArmTemplate_1",
+            "type": "Microsoft.Resources/deployments",
+            "apiVersion": "2018-02-01",
+            "properties": {
+                "mode": "incremental",
+                "templateLink": {
+                    "uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+                    "contentVersion": "1.0.0.0"
+                },
+                "parameters": {
+                    "factoryName": {
+                        "value": "[parameters('factoryName')]"
+                    },
+                    "SqlServer1_connectionString": {
+                        "value": "[parameters('SqlServer1_connectionString')]"
+                    },
+                    "SqlServer2_connectionString": {
+                        "value": "[parameters('SqlServer2_connectionString')]"
+                    },
+                    "SqlServer3_connectionString": {
+                        "value": "[parameters('SqlServer3_connectionString')]"
+                    }
+                }
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Resources/deployments', 'ds310Team7Covid19_ArmTemplate_0')]"
+            ]
+        },
+        {
+            "name": "ds310Team7Covid19_ArmTemplate_2",
+            "type": "Microsoft.Resources/deployments",
+            "apiVersion": "2018-02-01",
+            "properties": {
+                "mode": "incremental",
+                "templateLink": {
+                    "uri": "[concat(parameters('containerUri'), '/ArmTemplate_2.json', parameters('containerSasToken'))]",
+                    "contentVersion": "1.0.0.0"
+                },
+                "parameters": {
+                    "factoryName": {
+                        "value": "[parameters('factoryName')]"
+                    }
+                }
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Resources/deployments', 'ds310Team7Covid19_ArmTemplate_1')]"
+            ]
+        }
+    ]
+}
